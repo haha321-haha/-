@@ -97,6 +97,29 @@ export interface AppActions {
   recordApiResponseTime: (endpoint: string, time: number) => void;
   incrementErrorCount: () => void;
   resetPerformanceMetrics: () => void;
+  
+  // 错误记录
+  recordError: (error: {
+    message: string;
+    stack?: string;
+    componentStack?: string;
+    level?: 'low' | 'medium' | 'high';
+    timestamp: string;
+  }) => void;
+  
+  // 模态框操作记录
+  recordModalAction: (action: {
+    type: 'open' | 'close';
+    modalType: string;
+    timestamp: string;
+  }) => void;
+  
+  // Toast操作记录
+  recordToastAction: (action: {
+    type: 'add' | 'remove' | 'clear';
+    toastType?: string;
+    timestamp: string;
+  }) => void;
 }
 
 // 默认偏好设置
@@ -279,6 +302,36 @@ export const useAppStore = create<AppState & AppActions>()(
               apiResponseTimes: {},
               errorCount: 0,
             };
+          });
+        },
+        
+        // 错误记录
+        recordError: (error) => {
+          set((state) => {
+            // 增加错误计数
+            state.performance.errorCount += 1;
+            
+            // 记录错误到UI状态
+            state.ui.error = error.message;
+            
+            // 可以在这里添加更详细的错误日志记录
+            console.error('App Error Recorded:', error);
+          });
+        },
+        
+        // 模态框操作记录
+        recordModalAction: (action) => {
+          set((state) => {
+            // 记录模态框操作到性能监控
+            console.log('Modal Action Recorded:', action);
+          });
+        },
+        
+        // Toast操作记录
+        recordToastAction: (action) => {
+          set((state) => {
+            // 记录Toast操作到性能监控
+            console.log('Toast Action Recorded:', action);
           });
         },
       })),
