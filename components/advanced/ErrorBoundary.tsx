@@ -2,7 +2,7 @@
 
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { AlertTriangle, RefreshCw, Home, Bug } from 'lucide-react';
-import { useAppStore } from '../../lib/stores/appStore';
+import { useAppStore } from '../lib/stores/appStore';
 
 interface Props {
   children: ReactNode;

@@ -4,8 +4,8 @@ import React, { useEffect, ReactNode } from 'react';
 import { ErrorBoundary } from './ErrorBoundary';
 import { ToastContainer } from './ToastSystem';
 import { ModalManager } from './ModalSystem';
-import { useAppStore } from '../../lib/stores/appStore';
-import { performanceMonitor } from '../../lib/performance/monitor';
+import { useAppStore } from '../lib/stores/appStore';
+import { performanceMonitor } from '../lib/performance/monitor';
 
 interface AppProviderProps {
   children: ReactNode;

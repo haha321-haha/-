@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { X, AlertTriangle, CheckCircle, Info } from 'lucide-react';
-import { useAppStore } from '../../lib/stores/appStore';
+import { useAppStore } from '../lib/stores/appStore';
 
 // 模态框类型
 export type ModalType = 'default' | 'confirm' | 'alert' | 'custom';

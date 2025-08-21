@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { X, CheckCircle, AlertCircle, AlertTriangle, Info } from 'lucide-react';
-import { useAppStore, useToasts } from '../../lib/stores/appStore';
+import { useAppStore, useToasts } from '../lib/stores/appStore';
 
 // Toast类型
 export type ToastType = 'success' | 'error' | 'warning' | 'info';
