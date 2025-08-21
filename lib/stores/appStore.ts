@@ -103,7 +103,7 @@ export interface AppActions {
     message: string;
     stack?: string | null;
     componentStack?: string | null;
-    level?: 'low' | 'medium' | 'high';
+    level?: 'low' | 'medium' | 'high' | 'critical';
     timestamp: string;
   }) => void;
   
