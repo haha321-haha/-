@@ -101,22 +101,24 @@ export interface AppActions {
   // 错误记录
   recordError: (error: {
     message: string;
-    stack?: string;
-    componentStack?: string;
+    stack?: string | null;
+    componentStack?: string | null;
     level?: 'low' | 'medium' | 'high';
     timestamp: string;
   }) => void;
   
   // 模态框操作记录
   recordModalAction: (action: {
-    type: 'open' | 'close';
-    modalType: string;
+    action: 'open' | 'close';
+    modalId?: string;
+    modalType?: string;
     timestamp: string;
   }) => void;
   
   // Toast操作记录
   recordToastAction: (action: {
-    type: 'add' | 'remove' | 'clear';
+    action: 'add' | 'remove' | 'clear';
+    toastId?: string;
     toastType?: string;
     timestamp: string;
   }) => void;
