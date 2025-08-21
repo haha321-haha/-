@@ -11,32 +11,14 @@ const intlMiddleware = createMiddleware({
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // 将根路径与语言根路径统一指向原有交互工具首页（保留 home-clean 作为备用页）
+  // 根路径直接重定向到中文首页
   if (pathname === '/') {
     const url = request.nextUrl.clone();
-    url.pathname = '/zh/interactive-tools';
+    url.pathname = '/zh';
     return NextResponse.redirect(url, 308);
   }
 
-  // 兼容无语言前缀的 /home-clean（含尾随斜杠）
-  if (pathname === '/home-clean' || pathname === '/home-clean/') {
-    const url = request.nextUrl.clone();
-    url.pathname = '/zh/home-clean';
-    return NextResponse.redirect(url, 308);
-  }
-
-  if (pathname === '/zh') {
-    const url = request.nextUrl.clone();
-    url.pathname = '/zh/interactive-tools';
-    return NextResponse.redirect(url, 308);
-  }
-
-  if (pathname === '/en') {
-    const url = request.nextUrl.clone();
-    url.pathname = '/en/interactive-tools';
-    return NextResponse.redirect(url, 308);
-  }
-
+  // 其他路径交给 next-intl 处理
   return intlMiddleware(request);
 }
 
