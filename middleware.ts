@@ -1,24 +1,21 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 import { locales, defaultLocale, localePrefix } from './i18n';
 
 const intlMiddleware = createMiddleware({
   locales,
   defaultLocale,
-  localePrefix
+  localePrefix,
+  // 🚀 性能优化：自动检测用户语言偏好
+  localeDetection: true,
+  // 🔧 可选：设置默认行为更精确控制
+  alternateLinks: false, // 如果不需要自动生成alternate links
 });
 
 export default function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-
-  // 根路径直接重定向到中文首页
-  if (pathname === '/') {
-    const url = request.nextUrl.clone();
-    url.pathname = '/zh';
-    return NextResponse.redirect(url, 308);
-  }
-
-  // 其他路径交给 next-intl 处理
+  // 完全依赖next-intl的自动重定向机制
+  // next-intl会自动处理 / -> /zh 的重定向，状态码统一为302
+  // 🎯 双重保险：主方案依赖next-intl，备用方案在app/page.tsx
   return intlMiddleware(request);
 }
 

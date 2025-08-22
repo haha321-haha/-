@@ -5,10 +5,10 @@ const nextConfig = {
   // 🚀 Core Web Vitals 优化配置
   images: {
     unoptimized: false,
-    formats: ['image/webp', 'image/avif'], // 现代图片格式，压缩率更高
+    formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 640, 750, 828],
-    minimumCacheTTL: 31536000, // 1年缓存，提升性能
+    minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     loader: 'default',
@@ -22,21 +22,22 @@ const nextConfig = {
     ]
   },
 
-  // 性能优化
+  // 🚀 性能优化
   reactStrictMode: true,
   poweredByHeader: false,
-  compress: true, // 启用 gzip 压缩
+  compress: true,
   
-  // 实验性功能 - 提升性能
-  // 关闭实验特性，避免 dev/runtime 不稳定
+  // 🚀 实验性功能 - 整合你的建议
   experimental: {
-    optimizePackageImports: ['lucide-react'],
-    // optimizeCss: true,
-    // scrollRestoration: true,
+    // 📦 包导入优化：包含国际化相关包
+    optimizePackageImports: ['next-intl', 'lucide-react'],
+    // 🎯 其他性能优化
+    optimizeCss: true, // CSS优化
+    scrollRestoration: true, // 滚动位置恢复
   },
 
   // 构建优化
-  transpilePackages: ['lucide-react'],
+  transpilePackages: ['lucide-react', 'next-intl'],
   
   // 编译器优化
   compiler: {
@@ -52,9 +53,7 @@ const nextConfig = {
     ignoreDuringBuilds: false,
   },
   
-  // 简化webpack配置
   webpack: (config, { dev, isServer }) => {
-    // 基本模块解析修复
     config.resolve.fallback = {
       ...config.resolve.fallback,
       fs: false,
@@ -74,7 +73,7 @@ const nextConfig = {
   trailingSlash: false,
   generateEtags: true,
 
-  // 头部优化 - 提升安全性和性能
+  // 🚀 头部优化 - 增强缓存策略
   async headers() {
     return [
       {
@@ -102,17 +101,14 @@ const nextConfig = {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
           },
+          // 🎯 缓存控制优化
           {
-            key: 'Link',
-            value: '<https://fonts.googleapis.com>; rel=preconnect; crossorigin=anonymous',
-          },
-          {
-            key: 'Link',
-            value: '<https://fonts.gstatic.com>; rel=preconnect; crossorigin=anonymous',
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate', // 页面内容始终验证
           },
         ],
       },
-      // 静态资源缓存优化
+      // 静态资源长期缓存
       {
         source: '/images/(.*)',
         headers: [
@@ -120,7 +116,6 @@ const nextConfig = {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
           },
-
         ],
       },
       {
@@ -132,7 +127,6 @@ const nextConfig = {
           },
         ],
       },
-      // 字体缓存优化
       {
         source: '/fonts/(.*)',
         headers: [
@@ -145,17 +139,8 @@ const nextConfig = {
     ];
   },
 
-  // 重定向优化
-  async redirects() {
-    return [
-      // 根路径重定向到中文版本
-      {
-        source: '/',
-        destination: '/zh',
-        permanent: false,
-      },
-    ];
-  },
+  // 🚫 重定向配置已移除 - 完全交给next-intl处理
+  // 这确保了单一职责和无冲突的重定向逻辑
 };
 
 module.exports = withNextIntl(nextConfig);

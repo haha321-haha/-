@@ -28,12 +28,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/zh",
-      "permanent": false
-    }
   ]
 }
