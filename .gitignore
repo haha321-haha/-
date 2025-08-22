@@ -1,1 +1,3 @@
 .next/
+backup-*/
+*.backup
