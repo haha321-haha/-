@@ -15,7 +15,7 @@ const intlMiddleware = createMiddleware({
 export default function middleware(request: NextRequest) {
   // 完全依赖next-intl的自动重定向机制
   // next-intl会自动处理 / -> /zh 的重定向，状态码统一为302
-  // 🎯 双重保险：主方案依赖next-intl，备用方案在app/page.tsx
+  // �� 双重保险：主方案依赖next-intl，备用方案在app/page.tsx
   return intlMiddleware(request);
 }
 
@@ -23,5 +23,3 @@ export default function middleware(request: NextRequest) {
 export const config = {
   matcher: ['/((?!_next|api|favicon.ico|robots.txt|sitemap.xml|.*\\..*).*)']
 };
-
-
