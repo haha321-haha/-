@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useSymptomAssessment } from '../[locale]/interactive-tools/shared/hooks/useSymptomAssessment';
 import { AssessmentAnswer } from '../[locale]/interactive-tools/shared/types';
+import NoIndexMeta from '@/components/NoIndexMeta';
 
 export default function TestSymptomAssessment() {
   const {
@@ -87,7 +88,9 @@ export default function TestSymptomAssessment() {
   };
 
   return (
-    <div className="p-8 max-w-4xl mx-auto">
+    <>
+      <NoIndexMeta />
+      <div className="p-8 max-w-4xl mx-auto">
       <h1 className="text-2xl font-bold mb-6">症状评估测试页面</h1>
 
       <div className="mb-6 p-4 bg-gray-100 rounded">
@@ -176,5 +179,6 @@ export default function TestSymptomAssessment() {
         )}
       </div>
     </div>
+    </>
   );
 }
