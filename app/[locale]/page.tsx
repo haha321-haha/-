@@ -9,14 +9,14 @@ import NavigationTabs from '@/components/NavigationTabs';
 // 页面级别的metadata
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const isZh = locale === 'zh';
-  
+
   return {
-    title: isZh 
+    title: isZh
       ? 'PeriodHub - 专业痛经缓解方法和月经健康管理平台 | 科学指导，贴心陪伴'
       : 'PeriodHub - Professional Menstrual Health Management Platform | Scientific Guidance',
     description: isZh
-      ? '专业的女性月经健康管理平台，提供42篇专业文章、24个PDF资源，帮助女性科学管理月经健康，快速缓解痛经。基于医学研究的个性化建议，中西医结合的健康方案。'
-      : 'Professional menstrual health management platform providing 42 expert articles and 24 PDF resources to help women scientifically manage menstrual health and quickly relieve period pain.',
+      ? '专业痛经缓解指南和月经健康管理平台。提供科学的痛经治疗方法、原发性痛经诊断标准、NSAID用药建议和热敷疗法指导。42篇专业文章+24个实用工具，帮助女性科学管理经期健康，快速缓解痛经症状。'
+      : 'Professional menstrual cramps relief guide and period health management platform. Evidence-based dysmenorrhea treatment, NSAID medication guidelines, and heat therapy instructions. 42 expert articles + 24 practical tools for scientific period pain management and menstrual health.',
     keywords: isZh ? [
       '痛经怎么缓解最快方法', '痛经吃什么药最有效', '月经推迟几天算正常', '月经量少是什么原因',
       '痛经缓解', '月经疼痛', '经期健康', '女性健康', '月经健康管理', '经期疼痛怎么办', '中医调理',
@@ -26,7 +26,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       'menstrual health', 'period tracking', 'women health', 'dysmenorrhea treatment'
     ],
     openGraph: {
-      title: isZh 
+      title: isZh
         ? 'PeriodHub - 专业痛经缓解方法和月经健康管理平台'
         : 'PeriodHub - Professional Menstrual Health Management Platform',
       description: isZh
@@ -39,7 +39,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     },
     twitter: {
       card: 'summary_large_image',
-      title: isZh 
+      title: isZh
         ? 'PeriodHub - 专业痛经缓解方法和月经健康管理平台'
         : 'PeriodHub - Professional Menstrual Health Management Platform',
       description: isZh
@@ -90,7 +90,7 @@ const getStructuredData = (locale: string) => ({
       },
       "featureList": [
         locale === 'zh' ? "痛经追踪" : "Pain Tracking",
-        locale === 'zh' ? "周期预测" : "Cycle Prediction", 
+        locale === 'zh' ? "周期预测" : "Cycle Prediction",
         locale === 'zh' ? "体质评估" : "Constitution Assessment",
         locale === 'zh' ? "健康指南" : "Health Guides",
         locale === 'zh' ? "场景解决方案" : "Scenario Solutions"
@@ -156,7 +156,7 @@ const getStructuredData = (locale: string) => ({
           }
         },
         {
-          "@type": "Question", 
+          "@type": "Question",
           "name": locale === 'zh' ? "月经周期多少天算正常？" : "What is considered a normal menstrual cycle?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -184,7 +184,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
   setRequestLocale(locale);
   const t = useTranslations('home');
   const isZh = typeof locale === 'string' && (locale === 'zh' || locale.startsWith('zh'));
-  
+
   return (
     <>
       {/* 增强的结构化数据 */}
@@ -194,7 +194,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
           __html: JSON.stringify(getStructuredData(locale))
         }}
       />
-      
+
       <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50">
         {/* 高级Hero - 主要内容区域 */}
         <main>
@@ -211,7 +211,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                   {t('features.subtitle')}
                 </p>
               </header>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group">
                   <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
@@ -225,7 +225,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                     {locale === 'zh' ? '了解更多 →' : 'Learn more →'}
                   </div>
                 </article>
-                
+
                 <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group">
                   <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -238,7 +238,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                     {locale === 'zh' ? '了解更多 →' : 'Learn more →'}
                   </div>
                 </article>
-                
+
                 <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group">
                   <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -284,7 +284,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('trusted.title')}</h2>
                 <p className="text-xl text-gray-600">{t('trusted.subtitle')}</p>
               </div>
-              
+
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div className="bg-white rounded-xl p-6 shadow-sm">
                   <div className="text-3xl font-bold text-purple-600 mb-2">50K+</div>
@@ -306,6 +306,82 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             </div>
           </section>
 
+          {/* 痛经治疗专题链接区域 - 基于关键词数据优化 */}
+          <section className="py-16 bg-white" aria-labelledby="pain-management-heading">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header className="text-center mb-12">
+                <h2 id="pain-management-heading" className="text-3xl font-bold text-gray-900 mb-4">
+                  {locale === 'zh' ? '痛经治疗指南' : 'Period Pain Treatment Guide'}
+                </h2>
+                <p className="text-xl text-gray-600">
+                  {locale === 'zh' ? '基于循证医学的专业痛经治疗方案' : 'Evidence-based professional period pain treatment solutions'}
+                </p>
+              </header>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* 痛经用药指南 */}
+                <Link href={`/${locale}/articles/pain-management`} className="group bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600">
+                      {locale === 'zh' ? '痛经用药建议' : 'Pain Medication Guide'}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-3">
+                    {locale === 'zh' ? '布洛芬、萘普生等NSAID用药指南，剂量建议和注意事项' : 'NSAID medication guide including ibuprofen and naproxen dosing recommendations'}
+                  </p>
+                  <div className="text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    {locale === 'zh' ? '查看用药指南 →' : 'View medication guide →'}
+                  </div>
+                </Link>
+
+                {/* 热敷疗法指导 */}
+                <Link href={`/${locale}/scenario-solutions/emergency-kit`} className="group bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mr-3">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-red-600">
+                      {locale === 'zh' ? '热敷疗法指导' : 'Heat Therapy Guide'}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-3">
+                    {locale === 'zh' ? '热敷的科学原理、正确使用方法和热敷工具选择指南' : 'Scientific principles of heat therapy, proper usage methods and heating pad selection'}
+                  </p>
+                  <div className="text-red-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    {locale === 'zh' ? '学习热敷方法 →' : 'Learn heat therapy →'}
+                  </div>
+                </Link>
+
+                {/* 原发性痛经诊断 */}
+                <Link href={`/${locale}/health-guide/understanding-pain`} className="group bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-purple-600">
+                      {locale === 'zh' ? '痛经诊断标准' : 'Dysmenorrhea Diagnosis'}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-3">
+                    {locale === 'zh' ? '原发性痛经的诊断标准、病因机制和鉴别诊断要点' : 'Primary dysmenorrhea diagnosis criteria, pathophysiology and differential diagnosis'}
+                  </p>
+                  <div className="text-purple-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    {locale === 'zh' ? '了解诊断标准 →' : 'Learn diagnosis criteria →'}
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* 用户成功案例 */}
           <UserSuccessStories />
 
@@ -316,7 +392,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                 <h2 id="faq-heading" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t('faq.title')}</h2>
                 <p className="text-xl text-gray-600">{t('faq.subtitle')}</p>
               </header>
-              
+
               <div className="space-y-6">
                 <details className="bg-gray-50 rounded-lg p-6 group">
                   <summary className="font-semibold text-lg text-gray-900 cursor-pointer list-none flex items-center justify-between">
@@ -329,7 +405,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                     {t('faq.a1')}
                   </div>
                 </details>
-                
+
                 <details className="bg-gray-50 rounded-lg p-6 group">
                   <summary className="font-semibold text-lg text-gray-900 cursor-pointer list-none flex items-center justify-between">
                     <span>{t('faq.q2')}</span>
@@ -341,7 +417,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                     {t('faq.a2')}
                   </div>
                 </details>
-                
+
                 <details className="bg-gray-50 rounded-lg p-6 group">
                   <summary className="font-semibold text-lg text-gray-900 cursor-pointer list-none flex items-center justify-between">
                     <span>{t('faq.q3')}</span>
@@ -365,7 +441,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                   {t('quickLinks.title')}
                 </h2>
               </header>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <Link href={`/${locale}/health-guide`} className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-purple-200 transform hover:-translate-y-1">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -379,20 +455,24 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                     {locale === 'zh' ? '立即查看 →' : 'View now →'}
                   </div>
                 </Link>
-                
-                <Link href={`/${locale}/interactive-tools/period-pain-assessment`} className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-pink-200 transform hover:-translate-y-1">
+
+                <Link href={`/${locale}/interactive-tools/symptom-assessment`} className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-pink-200 transform hover:-translate-y-1">
                   <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-pink-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-pink-600 mb-2 group-hover:text-pink-700">{t('quickLinks.assessment')}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{t('quickLinks.assessmentDesc')}</p>
+                  <h3 className="text-lg font-semibold text-pink-600 mb-2 group-hover:text-pink-700">
+                    {locale === 'zh' ? '痛经症状评估' : 'Period Pain Assessment'}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {locale === 'zh' ? '科学评估痛经程度，获得个性化治疗建议和用药指导' : 'Scientifically assess period pain severity and get personalized treatment recommendations'}
+                  </p>
                   <div className="mt-3 text-pink-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                     {locale === 'zh' ? '开始评估 →' : 'Start assessment →'}
                   </div>
                 </Link>
-                
+
                 <Link href={`/${locale}/downloads`} className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-blue-200 transform hover:-translate-y-1">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -405,7 +485,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                     {locale === 'zh' ? '下载资源 →' : 'Download resources →'}
                   </div>
                 </Link>
-                
+
                 <Link href={`/${locale}/scenario-solutions`} className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent hover:border-green-200 transform hover:-translate-y-1">
                   <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

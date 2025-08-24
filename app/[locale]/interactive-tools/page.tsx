@@ -136,7 +136,7 @@ export default async function InteractiveToolsPage({
           {/* Page Header - 移动端优化 */}
           <header className="text-center px-4 sm:px-0">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-700 mb-3 sm:mb-4 leading-tight">
-              {t('title')}
+              {locale === 'zh' ? '痛经评估与月经健康管理工具' : 'Period Pain Assessment & Menstrual Health Management Tools'}
             </h1>
             <p className="text-base sm:text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
               {t('description')}
