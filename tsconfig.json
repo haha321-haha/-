@@ -55,6 +55,8 @@
     ".next",
     "out",
     "**/*.test.ts",
-    "**/__tests__/**"
+    "**/__tests__/**",
+    "app/test-assessment/**",
+    "app/test-symptom-assessment/**"
   ]
 }
