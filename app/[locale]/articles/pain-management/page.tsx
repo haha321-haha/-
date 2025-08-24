@@ -33,6 +33,16 @@ export default async function PainManagementPage({ params: { locale } }: Props) 
       available: true
     },
     {
+      id: 'medication-guide',
+      title: locale === 'zh' ? '痛经用药指南：NSAID安全使用' : 'Period Pain Medication Guide: Safe NSAID Use',
+      excerpt: locale === 'zh'
+        ? '详细介绍布洛芬、萘普生等NSAID药物的剂量建议、使用时机和注意事项。基于循证医学的安全用药指导，帮助您科学缓解痛经。'
+        : 'Comprehensive guide on ibuprofen, naproxen and other NSAIDs including dosing recommendations, timing and precautions. Evidence-based safe medication guidance for effective period pain relief.',
+      readTime: locale === 'zh' ? '15分钟阅读' : '15 min read',
+      category: locale === 'zh' ? '用药指导' : 'Medication Guide',
+      available: true
+    },
+    {
       id: 'natural-pain-relief',
       title: locale === 'zh' ? '天然缓解方案：草本疗法与营养调理' : 'Natural Relief Solutions: Herbal Therapy and Nutritional Care',
       excerpt: locale === 'zh'
