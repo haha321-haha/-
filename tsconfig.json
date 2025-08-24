@@ -57,6 +57,7 @@
     "**/*.test.ts",
     "**/__tests__/**",
     "app/test-assessment/**",
-    "app/test-symptom-assessment/**"
+    "app/test-symptom-assessment/**",
+    "tests/**"
   ]
 }
