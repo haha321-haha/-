@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useSymptomAssessment } from '../[locale]/interactive-tools/shared/hooks/useSymptomAssessment';
-import { AssessmentAnswer } from '../[locale]/interactive-tools/shared/types';
+import { useSymptomAssessment } from '@/app/[locale]/interactive-tools/shared/hooks/useSymptomAssessment';
+import { AssessmentAnswer } from '@/app/[locale]/interactive-tools/shared/types';
 import NoIndexMeta from '@/components/NoIndexMeta';
 
 export default function TestSymptomAssessment() {
