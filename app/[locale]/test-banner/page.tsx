@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { Locale } from '@/i18n';
+import NoIndexMeta from '@/components/NoIndexMeta';
 
 export default async function TestBannerPage({
   params: { locale }
@@ -9,7 +10,9 @@ export default async function TestBannerPage({
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen py-12 bg-gray-100">
+    <>
+      <NoIndexMeta />
+      <div className="min-h-screen py-12 bg-gray-100">
       <div className="container mx-auto px-4 max-w-7xl">
         
         <h1 className="text-4xl font-bold text-center mb-8">横幅测试页面</h1>
@@ -116,5 +119,6 @@ export default async function TestBannerPage({
 
       </div>
     </div>
+    </>
   );
 }

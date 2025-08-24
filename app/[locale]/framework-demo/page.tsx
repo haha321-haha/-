@@ -12,6 +12,7 @@ import {
   Cpu,
   Monitor
 } from 'lucide-react';
+import NoIndexMeta from '@/components/NoIndexMeta';
 
 export default function FrameworkDemoPage() {
   // 演示数据
@@ -30,7 +31,9 @@ export default function FrameworkDemoPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-12">
+    <>
+      <NoIndexMeta />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 头部 */}
         <div className="text-center mb-12">
@@ -210,5 +213,6 @@ export default function FrameworkDemoPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

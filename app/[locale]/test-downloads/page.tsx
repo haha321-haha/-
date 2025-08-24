@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Locale, locales } from '@/i18n';
+import NoIndexMeta from '@/components/NoIndexMeta';
 
 // Generate metadata for the page
 export async function generateMetadata({
@@ -32,7 +33,9 @@ export default async function DownloadsPage({
   const t = await getTranslations({ locale, namespace: 'downloadsPage' });
 
   return (
-    <div className="min-h-screen py-12 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+    <>
+      <NoIndexMeta />
+      <div className="min-h-screen py-12 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
@@ -102,7 +105,8 @@ export default async function DownloadsPage({
             {t('backToArticles')}
           </Link>
         </div>
+              </div>
       </div>
-    </div>
+    </>
   );
 }
