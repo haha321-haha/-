@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowLeft, Download } from 'lucide-react';
 import { Locale, locales } from '@/i18n';
 import OptimizedMobilePDFCenter from '@/components/OptimizedMobilePDFCenter';
+import { redirect } from 'next/navigation';
 
 // Generate metadata for the page
 export async function generateMetadata({
@@ -30,6 +31,8 @@ export default async function DownloadCenterPage({
 }) {
   setRequestLocale(locale);
 
+  // 301重定向到主下载页面
+  redirect(`/${locale}/downloads`);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100">
