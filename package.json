@@ -45,6 +45,11 @@
     "seo:check": "node scripts/seo-check.js",
     "seo:analyze": "npm run seo:check && npm run seo:optimize && echo '📊 SEO分析完成，请查看生成的报告文件'",
     "seo:full": "npm run seo:analyze && npm run build && echo '🚀 SEO优化和构建完成'",
+    "indexnow:submit": "node scripts/indexnow-submit.js",
+    "indexnow:verify": "curl -s https://www.periodhub.health/.well-known/49c6581aaa713a83b14b2d47022e79b6.txt",
+    "indexnow:monitor:key": "./scripts/key-file-monitor.sh",
+    "indexnow:monitor:api": "./scripts/indexnow-api-monitor.sh",
+    "indexnow:monitor:full": "./scripts/full-indexnow-monitor.sh",
     "lighthouse": "npm run build && npm run start & sleep 5 && npx lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html && pkill -f 'next start'"
   },
   "dependencies": {
