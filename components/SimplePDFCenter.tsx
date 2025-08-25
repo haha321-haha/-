@@ -331,7 +331,9 @@ const SimplePDFCenter: React.FC<SimplePDFCenterProps> = ({ locale }) => {
           title: locale === 'zh' ? '热疗完整指南' : 'Complete Heat Therapy Guide',
           type: 'article' as const,
           readTime: locale === 'zh' ? '8分钟' : '8 min read',
-          category: 'immediate'
+          category: 'immediate',
+          keywords: locale === 'zh' ? ['热疗', '热敷', '敷热水袋', '暖宝宝', '温热疗法', '热敷包', '指南', '温热', '治疗', '方法'] : ['heat', 'therapy', 'hot', 'compress', 'heating', 'pad', 'thermal', 'treatment', 'methods', 'warm'],
+          description: locale === 'zh' ? '详细的热疗使用方法和注意事项指南' : 'Detailed guide on heat therapy methods and precautions'
         },
         {
           id: 'immediate-3',
@@ -345,7 +347,9 @@ const SimplePDFCenter: React.FC<SimplePDFCenterProps> = ({ locale }) => {
           title: locale === 'zh' ? '自然物理疗法综合指南' : 'Natural Physical Therapy Guide',
           type: 'article' as const,
           readTime: locale === 'zh' ? '12分钟' : '12 min read',
-          category: 'immediate'
+          category: 'immediate',
+          keywords: locale === 'zh' ? ['按摩', '揉肚子', '穴位按摩', '指压', '按压', '物理疗法', '自然疗法', '手法治疗'] : ['massage', 'acupressure', 'physical', 'therapy', 'natural', 'treatment', 'manual', 'bodywork'],
+          description: locale === 'zh' ? '包含按摩、穴位按压等自然物理疗法的综合指南' : 'Comprehensive guide including massage, acupressure and other natural physical therapies'
         },
         {
           id: 'immediate-5',
@@ -361,7 +365,7 @@ const SimplePDFCenter: React.FC<SimplePDFCenterProps> = ({ locale }) => {
           type: 'article' as const,
           readTime: locale === 'zh' ? '15分钟' : '15 min read',
           category: 'immediate',
-          keywords: locale === 'zh' ? ['药物', '医学', '专业', '抗炎', '治疗'] : ['medication', 'medical', 'professional', 'anti-inflammatory', 'treatment']
+          keywords: locale === 'zh' ? ['止痛药', '布洛芬', '药物', '止痛片', '消炎药', '医学', '专业', '抗炎', '治疗', '药品'] : ['painkiller', 'ibuprofen', 'medication', 'pills', 'anti-inflammatory', 'medical', 'professional', 'treatment', 'drugs']
         },
         {
           id: 'immediate-7',
@@ -422,7 +426,7 @@ const SimplePDFCenter: React.FC<SimplePDFCenterProps> = ({ locale }) => {
           type: 'pdf' as const,
           readTime: locale === 'zh' ? 'PDF' : 'PDF',
           category: 'immediate',
-          keywords: locale === 'zh' ? ['热疗', '指南', '温热', '治疗', '方法'] : ['heat', 'therapy', 'thermal', 'treatment', 'methods'],
+          keywords: locale === 'zh' ? ['热疗', '热敷', '敷热水袋', '暖宝宝', '温热疗法', '热敷包', '指南', '温热', '治疗', '方法'] : ['heat', 'therapy', 'hot', 'compress', 'heating', 'pad', 'thermal', 'treatment', 'methods', 'warm'],
           description: locale === 'zh' ? '详细的热疗使用方法和注意事项指南' : 'Detailed guide on heat therapy methods and precautions'
         },
         {
@@ -458,14 +462,18 @@ const SimplePDFCenter: React.FC<SimplePDFCenterProps> = ({ locale }) => {
           title: locale === 'zh' ? '经期睡眠质量全面改善指南' : 'Comprehensive Sleep Quality Guide',
           type: 'article' as const,
           readTime: locale === 'zh' ? '20分钟' : '20 min read',
-          category: 'preparation'
+          category: 'preparation',
+          keywords: locale === 'zh' ? ['睡眠', '失眠', '入睡困难', '睡不着', '睡眠质量', '改善', '休息', '恢复', '安眠'] : ['sleep', 'insomnia', 'difficulty', 'falling', 'asleep', 'quality', 'improvement', 'rest', 'recovery'],
+          description: locale === 'zh' ? '解决经期失眠和睡眠质量问题的全面指南' : 'Comprehensive guide for solving menstrual insomnia and sleep quality issues'
         },
         {
           id: 'preparation-3',
           title: locale === 'zh' ? '经期压力管理完全指南' : 'Complete Stress Management Guide',
           type: 'article' as const,
           readTime: locale === 'zh' ? '22分钟' : '22 min read',
-          category: 'preparation'
+          category: 'preparation',
+          keywords: locale === 'zh' ? ['压力', '焦虑', '情绪', '心理', '紧张', '烦躁', '管理', '调节', '缓解', '心情'] : ['stress', 'anxiety', 'emotions', 'mental', 'tension', 'irritability', 'management', 'regulation', 'relief', 'mood'],
+          description: locale === 'zh' ? '管理经期压力、焦虑和情绪波动的完整指南' : 'Complete guide for managing menstrual stress, anxiety and emotional fluctuations'
         },
         {
           id: 'preparation-4',
@@ -473,7 +481,7 @@ const SimplePDFCenter: React.FC<SimplePDFCenterProps> = ({ locale }) => {
           type: 'article' as const,
           readTime: locale === 'zh' ? '18分钟' : '18 min read',
           category: 'preparation',
-          keywords: locale === 'zh' ? ['运动', '八段锦', '站桩', '缓解', '锻炼'] : ['exercise', 'baduanjin', 'qigong', 'relief', 'workout']
+          keywords: locale === 'zh' ? ['瑜伽', '拉伸', '运动', '八段锦', '站桩', '缓解', '锻炼', '体操', '伸展'] : ['yoga', 'stretching', 'exercise', 'baduanjin', 'qigong', 'relief', 'workout', 'movement', 'flexibility']
         },
         {
           id: 'preparation-5',
@@ -481,21 +489,24 @@ const SimplePDFCenter: React.FC<SimplePDFCenterProps> = ({ locale }) => {
           type: 'article' as const,
           readTime: locale === 'zh' ? '18分钟' : '18 min read',
           category: 'preparation',
-          keywords: locale === 'zh' ? ['饮食', '营养', '抗炎', '疼痛', '食物'] : ['diet', 'nutrition', 'anti-inflammatory', 'pain', 'food']
+          keywords: locale === 'zh' ? ['饮食', '营养', '抗炎', '疼痛', '食物', '消炎', '炎症', '食疗', '调理', '健康饮食', '经期饮食', '痛经饮食'] : ['diet', 'nutrition', 'anti-inflammatory', 'pain', 'food', 'inflammation', 'healing', 'dietary', 'therapy', 'healthy', 'eating', 'menstrual', 'diet']
         },
         {
           id: 'preparation-6',
           title: locale === 'zh' ? '镁与肠道健康综合指南' : 'Magnesium and Gut Health Guide',
           type: 'article' as const,
           readTime: locale === 'zh' ? '16分钟' : '16 min read',
-          category: 'preparation'
+          category: 'preparation',
+          keywords: locale === 'zh' ? ['镁', '肠道', '健康', '矿物质', '补充', '微量元素', '营养', '消化', '吸收', '经期', '痛经', '缓解'] : ['magnesium', 'gut', 'health', 'minerals', 'supplement', 'trace', 'elements', 'nutrition', 'digestion', 'absorption', 'menstrual', 'pain', 'relief']
         },
         {
           id: 'preparation-7',
           title: locale === 'zh' ? '经期友好食谱' : 'Period-Friendly Recipes',
           type: 'article' as const,
           readTime: locale === 'zh' ? '12分钟' : '12 min read',
-          category: 'preparation'
+          category: 'preparation',
+          keywords: locale === 'zh' ? ['食谱', '营养', '饮食', '食物', '菜谱', '做饭', '烹饪', '健康', '经期', '友好'] : ['recipes', 'nutrition', 'diet', 'food', 'cooking', 'meals', 'healthy', 'menstrual', 'friendly', 'period'],
+          description: locale === 'zh' ? '适合经期的营养食谱和烹饪指南' : 'Nutritious recipes and cooking guide suitable for menstrual periods'
         },
         // 计划准备PDF (7个：4个现有 + 3个新增)
         {
@@ -642,28 +653,32 @@ const SimplePDFCenter: React.FC<SimplePDFCenterProps> = ({ locale }) => {
           title: locale === 'zh' ? '经期疼痛并发症管理' : 'Pain Complications Management',
           type: 'article' as const,
           readTime: locale === 'zh' ? '22分钟' : '22 min read',
-          category: 'learning'
+          category: 'learning',
+          keywords: locale === 'zh' ? ['并发症', '管理', '经期', '疼痛', '治疗', '医学', '专业', '严重', '危险', '警示', '就医'] : ['complications', 'management', 'menstrual', 'pain', 'treatment', 'medical', 'professional', 'severe', 'danger', 'warning', 'medical-care']
         },
         {
           id: 'learning-11',
           title: locale === 'zh' ? '宫内节育器综合指南' : 'IUD Comprehensive Guide',
           type: 'article' as const,
           readTime: locale === 'zh' ? '28分钟' : '28 min read',
-          category: 'learning'
+          category: 'learning',
+          keywords: locale === 'zh' ? ['宫内节育器', 'IUD', '避孕', '节育', '妇科', '医生', '专业', '治疗', '经期', '疼痛', '管理'] : ['IUD', 'intrauterine', 'device', 'contraception', 'birth', 'control', 'gynecology', 'doctor', 'professional', 'treatment', 'menstrual', 'pain', 'management']
         },
         {
           id: 'learning-12',
           title: locale === 'zh' ? '循证医学痛经指南' : 'Evidence-Based Pain Guide',
           type: 'article' as const,
           readTime: locale === 'zh' ? '32分钟' : '32 min read',
-          category: 'learning'
+          category: 'learning',
+          keywords: locale === 'zh' ? ['循证医学', '科学', '研究', '证据', '痛经', '指南', '专业', '医学', '治疗', '方法', '有效性'] : ['evidence-based', 'medicine', 'science', 'research', 'evidence', 'dysmenorrhea', 'guide', 'professional', 'medical', 'treatment', 'methods', 'effectiveness']
         },
         {
           id: 'learning-13',
           title: locale === 'zh' ? '精油芳疗经期疼痛指南' : 'Essential Oils Pain Relief Guide',
           type: 'article' as const,
           readTime: locale === 'zh' ? '14分钟' : '14 min read',
-          category: 'learning'
+          category: 'learning',
+          keywords: locale === 'zh' ? ['精油', '芳疗', '芳香', '自然', '疗法', '经期', '疼痛', '缓解', '香薰', '植物', '天然', '治疗'] : ['essential', 'oils', 'aromatherapy', 'aromatic', 'natural', 'therapy', 'menstrual', 'pain', 'relief', 'fragrance', 'plants', 'natural', 'treatment']
         },
         // 学习理解PDF (10个：6个现有 + 4个新增)
         {
@@ -787,21 +802,24 @@ const SimplePDFCenter: React.FC<SimplePDFCenterProps> = ({ locale }) => {
           title: locale === 'zh' ? '全球传统经期疼痛缓解方法' : 'Global Traditional Pain Relief',
           type: 'article' as const,
           readTime: locale === 'zh' ? '25分钟' : '25 min read',
-          category: 'management'
+          category: 'management',
+          keywords: locale === 'zh' ? ['全球', '传统', '方法', '文化', '国际', '经期', '疼痛', '缓解', '古老', '智慧', '民族', '疗法'] : ['global', 'traditional', 'methods', 'cultural', 'international', 'menstrual', 'pain', 'relief', 'ancient', 'wisdom', 'ethnic', 'therapy']
         },
         {
           id: 'management-4',
           title: locale === 'zh' ? '个人经期健康档案' : 'Personal Health Profile',
           type: 'article' as const,
           readTime: locale === 'zh' ? '20分钟' : '20 min read',
-          category: 'management'
+          category: 'management',
+          keywords: locale === 'zh' ? ['个人', '健康', '档案', '记录', '追踪', '经期', '管理', '历史', '数据', '分析', '个性化'] : ['personal', 'health', 'profile', 'record', 'tracking', 'menstrual', 'management', 'history', 'data', 'analysis', 'personalized']
         },
         {
           id: 'management-5',
           title: locale === 'zh' ? '抗炎饮食缓解经期疼痛指南' : 'Anti-inflammatory Diet Guide',
           type: 'article' as const,
           readTime: locale === 'zh' ? '18分钟' : '18 min read',
-          category: 'management'
+          category: 'management',
+          keywords: locale === 'zh' ? ['抗炎', '饮食', '缓解', '经期', '疼痛', '指南', '食物', '营养', '食疗', '调理', '健康', '长期'] : ['anti-inflammatory', 'diet', 'relief', 'menstrual', 'pain', 'guide', 'food', 'nutrition', 'dietary', 'therapy', 'health', 'long-term']
         },
         {
           id: 'management-6',
@@ -816,21 +834,24 @@ const SimplePDFCenter: React.FC<SimplePDFCenterProps> = ({ locale }) => {
           title: locale === 'zh' ? '长期健康生活方式指南' : 'Long-term Healthy Lifestyle Guide',
           type: 'article' as const,
           readTime: locale === 'zh' ? '30分钟' : '30 min read',
-          category: 'management'
+          category: 'management',
+          keywords: locale === 'zh' ? ['长期', '健康', '生活方式', '指南', '习惯', '管理', '持续', '改善', '预防', '维护', '养生', '保健'] : ['long-term', 'health', 'lifestyle', 'guide', 'habits', 'management', 'sustainable', 'improvement', 'prevention', 'maintenance', 'wellness', 'care']
         },
         {
           id: 'management-8',
           title: locale === 'zh' ? '经期健康追踪与分析' : 'Health Tracking and Analysis',
           type: 'article' as const,
           readTime: locale === 'zh' ? '22分钟' : '22 min read',
-          category: 'management'
+          category: 'management',
+          keywords: locale === 'zh' ? ['经期', '健康', '追踪', '分析', '记录', '数据', '监测', '管理', '统计', '趋势', '报告', '评估'] : ['menstrual', 'health', 'tracking', 'analysis', 'record', 'data', 'monitoring', 'management', 'statistics', 'trends', 'reports', 'evaluation']
         },
         {
           id: 'management-9',
           title: locale === 'zh' ? '可持续健康管理策略' : 'Sustainable Health Management',
           type: 'article' as const,
           readTime: locale === 'zh' ? '28分钟' : '28 min read',
-          category: 'management'
+          category: 'management',
+          keywords: locale === 'zh' ? ['可持续', '健康', '管理', '策略', '长期', '规划', '目标', '执行', '坚持', '改善', '维护', '发展'] : ['sustainable', 'health', 'management', 'strategies', 'long-term', 'planning', 'goals', 'execution', 'persistence', 'improvement', 'maintenance', 'development']
         },
         // 长期管理PDF (6个：全新分类)
         {
