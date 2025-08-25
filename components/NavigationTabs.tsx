@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 
 interface NavigationTabsProps {
   locale: string;
@@ -8,9 +9,15 @@ interface NavigationTabsProps {
 
 export default function NavigationTabs({ locale }: NavigationTabsProps) {
   const t = useTranslations('navigationTabs');
+  const router = useRouter();
+  
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     section?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const navigateToDownloads = () => {
+    router.push(`/${locale}/downloads`);
   };
 
   return (
@@ -23,7 +30,7 @@ export default function NavigationTabs({ locale }: NavigationTabsProps) {
           {locale === 'en' ? '📚 Articles' : '📚 专业文章'}
         </button>
         <button
-          onClick={() => scrollToSection('downloads-section')}
+          onClick={navigateToDownloads}
           className="px-6 py-2 rounded-md text-neutral-700 hover:bg-white hover:shadow-sm transition-all"
         >
           {locale === 'en' ? '📥 PDF Downloads' : '📥 PDF下载'}
