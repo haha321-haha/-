@@ -6,10 +6,17 @@ summary_zh: "精选8-10款简单易学、美味又营养的食谱，涵盖早餐
 date: "2024-12-19"
 reading_time: "12分钟"
 reading_time_zh: "12分钟"
-tags: ["营养饮食", "经期护理", "食疗养生", "健康食谱"]
-tags_zh: ["营养饮食", "经期护理", "食疗养生", "健康食谱"]
+tags: ["营养饮食", "经期护理", "食疗养生", "健康食谱", "经期友好食物", "月经营养"]
+tags_zh: ["营养饮食", "经期护理", "食疗养生", "健康食谱", "经期友好食物", "月经营养"]
 category: "health"
 author: "PeriodHub团队"
+seo_title: "经期友好食谱：营养餐食助力月经健康与舒适"
+seo_title_zh: "经期友好食谱：营养餐食助力月经健康与舒适"
+seo_description: "发现8-10款精选经期友好食谱，涵盖早餐、午餐、晚餐和零食。了解如何通过合理营养自然缓解经期不适，用美味易做的餐食支持月经健康。"
+seo_description_zh: "发现8-10款精选经期友好食谱，涵盖早餐、午餐、晚餐和零食。了解如何通过合理营养自然缓解经期不适，用美味易做的餐食支持月经健康。"
+featured_image: "/images/articles/period-friendly-recipes-feature.jpg"
+canonical_url: "/zh/articles/period-friendly-recipes"
+schema_type: "Article"
 ---
 
 # 经期友好食谱：滋养身心，舒适度过那几天

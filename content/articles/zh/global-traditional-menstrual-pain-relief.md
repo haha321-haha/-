@@ -1,14 +1,16 @@
 ---
 title: "全球视野下的痛经缓解：传统智慧与现代科学的融合"
-description: "深入探讨印度阿育吠陀医学、中医以及其他文化中的传统痛经缓解方法，结合现代科学研究，为女性提供更全面的痛经管理方案。"
+date: "2024-12-19"
 summary: "探索全球传统医学智慧，融合阿育吠陀、中医、欧洲草药等多元文化痛经缓解方法。从姜黄牛奶到温经汤，从针灸穴位到瑜伽体式，结合现代科学验证，为女性提供安全有效的自然痛经管理方案，实现传统智慧与现代医学的完美结合。"
 category: "健康管理"
-tags: ["痛经缓解", "阿育吠陀", "中医", "传统医学", "自然疗法", "女性健康"]
+tags: ["痛经缓解", "阿育吠陀", "中医", "传统医学", "自然疗法", "女性健康", "全球传统医学"]
 author: "Period Hub Health Team"
-publishDate: "2024-12-19"
-lastModified: "2024-12-19"
-featured: true
-readingTime: "15分钟"
+seo_title: "全球传统痛经缓解方法：阿育吠陀、中医与现代科学"
+seo_description: "深入探讨印度阿育吠陀医学、中医以及其他文化中的传统痛经缓解方法，结合现代科学研究，为女性提供更全面的痛经管理方案。"
+featured_image: "/images/articles/global-traditional-menstrual-pain-relief-feature.jpg"
+canonical_url: "/zh/articles/global-traditional-menstrual-pain-relief"
+schema_type: "Article"
+reading_time: "15分钟"
 ---
 
 # 全球视野下的痛经缓解：传统智慧与现代科学的融合

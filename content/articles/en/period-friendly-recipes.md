@@ -6,10 +6,17 @@ summary_zh: "精选8-10款简单易学、美味又营养的食谱，涵盖早餐
 date: "2024-12-19"
 reading_time: "12 min read"
 reading_time_zh: "12分钟阅读"
-tags: ["nutrition", "period care", "healthy recipes", "wellness"]
-tags_zh: ["营养饮食", "经期护理", "食疗养生", "健康食谱"]
+tags: ["nutrition", "period care", "healthy recipes", "wellness", "period-friendly foods", "menstrual nutrition"]
+tags_zh: ["营养饮食", "经期护理", "食疗养生", "健康食谱", "经期友好食物", "月经营养"]
 category: "health"
 author: "PeriodHub Team"
+seo_title: "Period-Friendly Recipes: Nutritious Meals for Menstrual Health & Comfort"
+seo_title_zh: "经期友好食谱：营养餐食助力月经健康与舒适"
+seo_description: "Discover 8-10 carefully selected period-friendly recipes covering breakfast, lunch, dinner, and snacks. Learn how proper nutrition can naturally alleviate period discomfort and support menstrual health with delicious, easy-to-make meals."
+seo_description_zh: "发现8-10款精选经期友好食谱，涵盖早餐、午餐、晚餐和零食。了解如何通过合理营养自然缓解经期不适，用美味易做的餐食支持月经健康。"
+featured_image: "/images/articles/period-friendly-recipes-feature.jpg"
+canonical_url: "/articles/period-friendly-recipes"
+schema_type: "Article"
 ---
 
 # Period-Friendly Recipes: Nourish Your Body and Soul During Those Days

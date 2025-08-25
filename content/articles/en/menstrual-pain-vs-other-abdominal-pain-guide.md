@@ -1,15 +1,16 @@
 ---
 title: "Comprehensive Guide to Menstrual Pain vs Other Abdominal Pain: Recognizing Warning Signs and Making Informed Decisions"
-description: "Authoritative medical guide helping women accurately distinguish menstrual pain from other dangerous abdominal pain, including comparative analysis of heart attacks, acute appendicitis, kidney stones, and 5 major conditions with key warning sign identification and emergency management advice."
+date: "2024-12-19"
 summary: "Detailed comparison of menstrual pain with heart attacks, acute appendicitis, kidney stones, and other common abdominal pain, providing scientific differential diagnosis methods and warning sign identification checklists to help women make correct medical decisions at critical moments."
 category: "Understanding & Education"
-tags: ["menstrual pain identification", "abdominal pain diagnosis", "warning signs", "medical guidance", "emergency management"]
+tags: ["menstrual pain identification", "abdominal pain diagnosis", "warning signs", "medical guidance", "emergency management", "differential diagnosis"]
 author: "Period Hub Health Team"
-publishDate: "2024-12-19"
-lastModified: "2024-12-19"
-featured: true
+seo_title: "Menstrual Pain vs Other Abdominal Pain: Warning Signs & Differential Diagnosis"
+seo_description: "Authoritative medical guide helping women accurately distinguish menstrual pain from other dangerous abdominal pain, including comparative analysis of heart attacks, acute appendicitis, kidney stones, and 5 major conditions with key warning sign identification and emergency management advice."
+featured_image: "/images/articles/menstrual-pain-vs-other-abdominal-pain-feature.jpg"
+canonical_url: "/articles/menstrual-pain-vs-other-abdominal-pain-guide"
+schema_type: "Article"
 reading_time: "25 minutes"
-reading_time_zh: "25分钟"
 ---
 
 # Menstrual Pain vs Other Abdominal Pain: 5-Minute Self-Assessment Guide
