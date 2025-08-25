@@ -163,6 +163,17 @@ export async function generateMetadata({
         'zh-CN': `${baseUrl}/zh/articles/${slug}`,
       },
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     other: {
       'article:published_time': article.date,
       'article:author': article.author,

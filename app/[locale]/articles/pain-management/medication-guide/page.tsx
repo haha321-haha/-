@@ -9,6 +9,8 @@ type Props = {
 }
 
 export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://periodhub.health';
+  
   return {
     title: locale === 'zh' 
       ? '痛经用药指南：布洛芬与萘普生剂量建议 - Period Hub' 
@@ -19,7 +21,39 @@ export async function generateMetadata({ params: { locale } }: Props): Promise<M
     keywords: locale === 'zh'
       ? ['痛经用药建议', '布洛芬剂量', '萘普生用法', 'NSAID痛经', '痛经药物指南', '原发性痛经治疗']
       : ['ibuprofen for period pain', 'naproxen period cramps', 'NSAID dysmenorrhea', 'period pain medication', 'menstrual cramp relief'],
+    alternates: {
+      canonical: `${baseUrl}/${locale}/articles/pain-management/medication-guide`,
+      languages: {
+        'zh-CN': `${baseUrl}/zh/articles/pain-management/medication-guide`,
+        'en-US': `${baseUrl}/en/articles/pain-management/medication-guide`,
+        'x-default': `${baseUrl}/articles/pain-management/medication-guide`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
+      title: locale === 'zh' 
+        ? '痛经用药指南：布洛芬与萘普生剂量建议'
+        : 'Period Pain Medication Guide: Ibuprofen vs Naproxen',
+      description: locale === 'zh'
+        ? '专业痛经用药指南，NSAID药物安全使用指导'
+        : 'Professional medication guide for period pain relief',
+      url: `${baseUrl}/${locale}/articles/pain-management/medication-guide`,
+      siteName: 'PeriodHub',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
       title: locale === 'zh' 
         ? '痛经用药指南：布洛芬与萘普生剂量建议'
         : 'Period Pain Medication Guide: Ibuprofen vs Naproxen',

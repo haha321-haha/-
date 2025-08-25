@@ -213,44 +213,50 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
               </header>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors">{t('features.tracking.title')}</h3>
-                  <p className="text-gray-600 leading-relaxed">{t('features.tracking.description')}</p>
-                  <div className="mt-4 text-purple-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                    {locale === 'zh' ? '了解更多 →' : 'Learn more →'}
-                  </div>
-                </article>
+                <Link href={`/${locale}/interactive-tools/cycle-tracker`} className="block">
+                  <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group h-full">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors">{t('features.tracking.title')}</h3>
+                    <p className="text-gray-600 leading-relaxed">{t('features.tracking.description')}</p>
+                    <div className="mt-4 text-purple-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                      {locale === 'zh' ? '了解更多 →' : 'Learn more →'}
+                    </div>
+                  </article>
+                </Link>
 
-                <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">{t('features.assessment.title')}</h3>
-                  <p className="text-gray-600 leading-relaxed">{t('features.assessment.description')}</p>
-                  <div className="mt-4 text-blue-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                    {locale === 'zh' ? '了解更多 →' : 'Learn more →'}
-                  </div>
-                </article>
+                <Link href={`/${locale}/interactive-tools/symptom-assessment`} className="block">
+                  <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group h-full">
+                    <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">{t('features.assessment.title')}</h3>
+                    <p className="text-gray-600 leading-relaxed">{t('features.assessment.description')}</p>
+                    <div className="mt-4 text-blue-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                      {locale === 'zh' ? '了解更多 →' : 'Learn more →'}
+                    </div>
+                  </article>
+                </Link>
 
-                <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-green-600 transition-colors">{t('features.resources.title')}</h3>
-                  <p className="text-gray-600 leading-relaxed">{t('features.resources.description')}</p>
-                  <div className="mt-4 text-green-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                    {locale === 'zh' ? '了解更多 →' : 'Learn more →'}
-                  </div>
-                </article>
+                <Link href={`/${locale}/downloads`} className="block">
+                  <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group h-full">
+                    <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-green-600 transition-colors">{t('features.resources.title')}</h3>
+                    <p className="text-gray-600 leading-relaxed">{t('features.resources.description')}</p>
+                    <div className="mt-4 text-green-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                      {locale === 'zh' ? '了解更多 →' : 'Learn more →'}
+                    </div>
+                  </article>
+                </Link>
               </div>
             </div>
           </section>
@@ -320,7 +326,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* 痛经用药指南 */}
-                <Link href={`/${locale}/articles/pain-management`} className="group bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+                <Link href={`/${locale}/articles/pain-management/medication-guide`} className="group bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -340,7 +346,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                 </Link>
 
                 {/* 热敷疗法指导 */}
-                <Link href={`/${locale}/scenario-solutions/emergency-kit`} className="group bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
+                <Link href={`/${locale}/articles/heat-therapy-complete-guide`} className="group bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300">
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mr-3">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

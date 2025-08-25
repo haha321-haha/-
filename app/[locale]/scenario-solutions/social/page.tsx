@@ -24,10 +24,45 @@ interface Props {
 
 export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'scenarioSolutionsPage' });
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://periodhub.health';
   
   return {
     title: `${t('scenarios.social.title')} - ${t('title')}`,
     description: t('scenarios.social.description'),
+    keywords: locale === 'zh' ? [
+      '约会期间痛经', '社交场合痛经', '经期约会技巧', '痛经应急处理', '经期社交礼仪',
+      '约会痛经缓解', '经期外出准备', '社交痛经管理', '约会应急包', '经期自信'
+    ] : [
+      'period pain during dates', 'social period management', 'dating with cramps', 'period emergency social',
+      'menstrual pain social situations', 'dating period tips', 'social period confidence', 'period dating guide'
+    ],
+    alternates: {
+      canonical: `${baseUrl}/${locale}/scenario-solutions/social`,
+      languages: {
+        'zh-CN': `${baseUrl}/zh/scenario-solutions/social`,
+        'en-US': `${baseUrl}/en/scenario-solutions/social`,
+        'x-default': `${baseUrl}/scenario-solutions/social`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    openGraph: {
+      title: `${t('scenarios.social.title')} - ${t('title')}`,
+      description: t('scenarios.social.description'),
+      url: `${baseUrl}/${locale}/scenario-solutions/social`,
+      siteName: 'PeriodHub',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'article',
+    },
   };
 }
 

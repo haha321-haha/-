@@ -24,10 +24,30 @@ export async function generateMetadata({
   params: { locale: Locale }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'teenHealth' });
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://periodhub.health';
   
   return {
     title: t('meta.title'),
     description: t('meta.description'),
+    alternates: {
+      canonical: `${baseUrl}/${locale}/teen-health`,
+      languages: {
+        'zh-CN': `${baseUrl}/zh/teen-health`,
+        'en-US': `${baseUrl}/en/teen-health`,
+        'x-default': `${baseUrl}/teen-health`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 

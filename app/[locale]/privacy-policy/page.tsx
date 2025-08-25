@@ -10,18 +10,53 @@ export async function generateMetadata({
 }: {
   params: { locale: Locale }
 }): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://periodhub.health';
   const title = locale === 'zh' ? '隐私政策' : 'Privacy Policy';
   const description = locale === 'zh' 
-    ? '了解我们如何收集、使用和保护您的个人信息。'
-    : 'Learn how we collect, use, and protect your personal information.';
+    ? '了解PeriodHub如何收集、使用和保护您的个人健康信息。我们承诺保护您的隐私，确保您的经期健康数据安全。详细了解我们的数据处理政策和用户权利。'
+    : 'Learn how PeriodHub collects, uses, and protects your personal health information. We are committed to protecting your privacy and ensuring the security of your menstrual health data. Detailed information about our data processing policies and user rights.';
 
   return {
-    title: `${title} | periodhub.health`,
+    title: `${title} | PeriodHub`,
     description,
+    keywords: locale === 'zh' ? [
+      '隐私政策', '数据保护', '个人信息安全', '健康数据隐私', '用户隐私权',
+      '数据处理政策', '信息安全', 'PeriodHub隐私', '经期数据保护'
+    ] : [
+      'privacy policy', 'data protection', 'personal information security', 'health data privacy',
+      'user privacy rights', 'data processing policy', 'information security', 'menstrual health privacy'
+    ],
+    alternates: {
+      canonical: `${baseUrl}/${locale}/privacy-policy`,
+      languages: {
+        'zh-CN': `${baseUrl}/zh/privacy-policy`,
+        'en-US': `${baseUrl}/en/privacy-policy`,
+        'x-default': `${baseUrl}/privacy-policy`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
-      title,
+      title: `${title} | PeriodHub`,
       description,
+      url: `${baseUrl}/${locale}/privacy-policy`,
+      siteName: 'PeriodHub',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary',
+      title: `${title} | PeriodHub`,
+      description,
     },
   };
 }

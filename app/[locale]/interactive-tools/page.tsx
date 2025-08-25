@@ -15,10 +15,50 @@ export async function generateMetadata({
   params: { locale: Locale }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'interactiveToolsPage' });
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://periodhub.health';
   
   return {
     title: t('title'),
     description: t('description'),
+    keywords: locale === 'zh' ? [
+      '互动工具', '痛经评估工具', '经期追踪', '症状评估', '痛经自测',
+      '月经健康工具', '经期管理工具', '痛经诊断', '健康评估', '经期计算器'
+    ] : [
+      'interactive tools', 'period pain assessment', 'menstrual tracking', 'symptom evaluation',
+      'period pain self-test', 'menstrual health tools', 'period management tools', 'health assessment'
+    ],
+    alternates: {
+      canonical: `${baseUrl}/${locale}/interactive-tools`,
+      languages: {
+        'zh-CN': `${baseUrl}/zh/interactive-tools`,
+        'en-US': `${baseUrl}/en/interactive-tools`,
+        'x-default': `${baseUrl}/interactive-tools`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: `${baseUrl}/${locale}/interactive-tools`,
+      siteName: 'PeriodHub',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('title'),
+      description: t('description'),
+    },
   };
 }
 

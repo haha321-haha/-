@@ -1,8 +1,5 @@
-'use client';
-
-import { useRef, useState } from 'react';
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { Metadata } from 'next';
+import SymptomAssessmentClient from './SymptomAssessmentClient';
 
 type Locale = 'en' | 'zh';
 
@@ -10,40 +7,60 @@ interface Props {
   params: { locale: Locale };
 }
 
+export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://periodhub.health';
+  
+  return {
+    title: locale === 'zh' 
+      ? '痛经症状评估工具 - 科学评估痛经程度 | PeriodHub'
+      : 'Period Pain Symptom Assessment Tool - Scientific Pain Evaluation | PeriodHub',
+    description: locale === 'zh'
+      ? '专业的痛经症状评估工具，基于医学标准科学评估痛经程度，提供个性化治疗建议和用药指导。免费在线评估，帮助女性更好地了解和管理痛经症状。'
+      : 'Professional period pain symptom assessment tool based on medical standards. Get personalized treatment recommendations and medication guidance through scientific pain evaluation. Free online assessment for better menstrual health management.',
+    keywords: locale === 'zh' ? [
+      '痛经症状评估', '痛经程度测试', '经期疼痛评估', '痛经自测工具', '月经疼痛评估',
+      '痛经严重程度', '经期症状检测', '痛经诊断工具', '月经健康评估', '痛经量表'
+    ] : [
+      'period pain assessment', 'menstrual cramp evaluation', 'dysmenorrhea severity test', 'period pain scale',
+      'menstrual pain assessment tool', 'period symptom checker', 'cramp severity evaluation'
+    ],
+    alternates: {
+      canonical: `${baseUrl}/${locale}/interactive-tools/symptom-assessment`,
+      languages: {
+        'zh-CN': `${baseUrl}/zh/interactive-tools/symptom-assessment`,
+        'en-US': `${baseUrl}/en/interactive-tools/symptom-assessment`,
+        'x-default': `${baseUrl}/interactive-tools/symptom-assessment`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    openGraph: {
+      title: locale === 'zh' 
+        ? '痛经症状评估工具 - 科学评估痛经程度'
+        : 'Period Pain Symptom Assessment Tool - Scientific Pain Evaluation',
+      description: locale === 'zh'
+        ? '专业的痛经症状评估工具，基于医学标准提供个性化治疗建议'
+        : 'Professional period pain assessment tool with personalized treatment recommendations',
+      url: `${baseUrl}/${locale}/interactive-tools/symptom-assessment`,
+      siteName: 'PeriodHub',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'website',
+    },
+  };
+}
+
 export default function SymptomAssessmentPage({ params: { locale } }: Props) {
-  const t = useTranslations('interactiveTools');
-  const [selectedSymptom, setSelectedSymptom] = useState('');
-  const [painLevel, setPainLevel] = useState(5);
-  const [isAssessing, setIsAssessing] = useState(false);
-  const resultRef = useRef<HTMLDivElement | null>(null);
-  const [result, setResult] = useState<null | {
-    score: number;
-    maxScore: number;
-    percentage: number;
-    severity: 'mild' | 'moderate' | 'severe' | 'emergency';
-    summary: string;
-    recommendations: Array<{
-      id: string;
-      title: string;
-      description: string;
-      timeframe: string;
-      priority: 'high' | 'medium' | 'low';
-      actionSteps: string[];
-    }>;
-  }>(null);
-  const percent = ((painLevel - 1) / 9) * 100;
-  const gradientFill = 'linear-gradient(90deg, #22c55e, #f59e0b, #ef4444)';
-  const trackBase = 'linear-gradient(90deg, #e5e7eb 0 0)';
-
-  const handleStartAssessment = () => {
-    if (!selectedSymptom) {
-      alert(locale === 'zh' ? '请先选择症状' : 'Please select a symptom first');
-      return;
-    }
-
-    setIsAssessing(true);
-    
-    // 模拟评估过程
+  return <SymptomAssessmentClient locale={locale} />;
+}
     setTimeout(() => {
       setIsAssessing(false);
 

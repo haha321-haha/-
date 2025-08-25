@@ -26,10 +26,50 @@ interface Props {
 
 export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'scenarioSolutionsPage' });
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://periodhub.health';
   
   return {
     title: `${t('scenarios.commute.title')} - ${t('title')}`,
     description: t('scenarios.commute.description'),
+    keywords: locale === 'zh' ? [
+      '通勤痛经', '上班路上痛经', '交通工具痛经', '公共交通痛经', '开车痛经',
+      '地铁痛经', '公交车痛经', '通勤应急包', '移动痛经缓解', '出行痛经管理'
+    ] : [
+      'commute period pain', 'period pain during travel', 'public transport period pain', 'driving with cramps',
+      'subway period pain', 'bus period pain', 'travel emergency kit', 'mobile period pain relief'
+    ],
+    alternates: {
+      canonical: `${baseUrl}/${locale}/scenario-solutions/commute`,
+      languages: {
+        'zh-CN': `${baseUrl}/zh/scenario-solutions/commute`,
+        'en-US': `${baseUrl}/en/scenario-solutions/commute`,
+        'x-default': `${baseUrl}/scenario-solutions/commute`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    openGraph: {
+      title: `${t('scenarios.commute.title')} - ${t('title')}`,
+      description: t('scenarios.commute.description'),
+      url: `${baseUrl}/${locale}/scenario-solutions/commute`,
+      siteName: 'PeriodHub',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t('scenarios.commute.title')} - ${t('title')}`,
+      description: t('scenarios.commute.description'),
+    },
   };
 }
 

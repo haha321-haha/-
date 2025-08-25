@@ -23,10 +23,50 @@ interface Props {
 
 export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'scenarioSolutionsPage' });
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://periodhub.health';
   
   return {
     title: `${t('scenarios.sleep.title')} - ${t('title')}`,
     description: t('scenarios.sleep.description'),
+    keywords: locale === 'zh' ? [
+      '经期失眠', '痛经影响睡眠', '月经期睡眠质量', '经期睡眠改善', '痛经夜间缓解',
+      '经期睡眠姿势', '月经期睡眠障碍', '痛经睡眠技巧', '经期安眠方法', '夜间痛经处理'
+    ] : [
+      'period insomnia', 'menstrual cramps sleep', 'period sleep quality', 'menstrual sleep improvement',
+      'nighttime period pain relief', 'period sleep positions', 'menstrual sleep disorders', 'period sleep tips'
+    ],
+    alternates: {
+      canonical: `${baseUrl}/${locale}/scenario-solutions/sleep`,
+      languages: {
+        'zh-CN': `${baseUrl}/zh/scenario-solutions/sleep`,
+        'en-US': `${baseUrl}/en/scenario-solutions/sleep`,
+        'x-default': `${baseUrl}/scenario-solutions/sleep`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    openGraph: {
+      title: `${t('scenarios.sleep.title')} - ${t('title')}`,
+      description: t('scenarios.sleep.description'),
+      url: `${baseUrl}/${locale}/scenario-solutions/sleep`,
+      siteName: 'PeriodHub',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t('scenarios.sleep.title')} - ${t('title')}`,
+      description: t('scenarios.sleep.description'),
+    },
   };
 }
 
