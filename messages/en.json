@@ -286,17 +286,17 @@
       "keywords": "menstrual health,PDF download,health management,women's health,period guide"
     },
     "search": {
-      "placeholder": "Search {totalResources} resources... Try: pain, relief, nutrition, exercise, medical, communication",
+      "placeholder": "Search {totalResources} resources... Try: heat therapy, dysmenorrhea, yoga, nutrition, massage, medication",
       "placeholderShort": "Search resources...",
       "keywords": {
-        "pain": "pain",
-        "relief": "relief",
+        "heatTherapy": "heat therapy",
+        "dysmenorrhea": "dysmenorrhea",
+        "yoga": "yoga",
         "nutrition": "nutrition",
-        "exercise": "exercise",
-        "medical": "medical",
-        "communication": "communication"
+        "massage": "massage",
+        "medication": "medication"
       },
-      "suggestions": "Try keywords: pain, relief, nutrition, exercise, medical, communication",
+      "suggestions": "Try keywords: heat therapy, dysmenorrhea, yoga, nutrition, massage, medication",
       "helpText": "Search in {totalResources} expert resources",
       "ariaLabel": "Search health resources"
     },
