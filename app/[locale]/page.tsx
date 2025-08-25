@@ -212,7 +212,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                 </p>
               </header>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <Link href={`/${locale}/interactive-tools/cycle-tracker`} className="block">
                   <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group h-full">
                     <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
@@ -254,6 +254,28 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
                     <p className="text-gray-600 leading-relaxed">{t('features.resources.description')}</p>
                     <div className="mt-4 text-green-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                       {locale === 'zh' ? '了解更多 →' : 'Learn more →'}
+                    </div>
+                  </article>
+                </Link>
+
+                <Link href={`/${locale}/immediate-relief`} className="block">
+                  <article className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-200 group h-full">
+                    <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-red-600 transition-colors">
+                      {locale === 'zh' ? '即时缓解' : 'Immediate Relief'}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {locale === 'zh' 
+                        ? '疼痛来袭时的快速解决方案，立即管理经期疼痛的实用技巧。'
+                        : 'Quick solutions when pain strikes. Practical techniques for immediate menstrual pain management.'
+                      }
+                    </p>
+                    <div className="mt-4 text-red-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                      {locale === 'zh' ? '立即缓解 →' : 'Get Relief →'}
                     </div>
                   </article>
                 </Link>
